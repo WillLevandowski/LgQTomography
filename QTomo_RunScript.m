@@ -11,7 +11,8 @@ for freq_invert=1:length(frequencies)
     
     QTomo_ReadData %%% import data and format
     fprintf(['Inversion at ' num2str(f) ' Hz: \n' ])%...
-    QTomo_traceLg %%% build model geometry and trace rays/compute kernels
+    %%%%QTomo_traceLg %%% build model geometry and trace rays/compute kernels
+    QTomo_traceLgRays %%%% Use "...Rays" unless you are using time-windowed displacement spectra
     QTomo_BuildSmoothingMatrix  %%% build "smooth_A", the smoothing matrix
    tic
     QTomo_Inversion %%% run the inversion
